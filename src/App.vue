@@ -1,14 +1,32 @@
 <template>
   <div id="app">
-    <div id="index_title">
+    <div id="index_top">
+      <Top></Top>
+    </div>
+    <div id="index_center">
+      <router-view></router-view>
+    </div>
+    <div id="index_bottom">
+
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Top  from './components/top.vue'
+export default {
+  components:{
+    Top
+  }
+}
+
+</script>
 
 <style lang="scss">
 body {
   padding: 0;
   margin: 0;
+  background-color: #E9EAED;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,49 +35,6 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-@media (max-width: 576px) {
-  #index_title {
-    background-color: #00F;
-    height: 60px;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  #index_title {
-    height: 60px;
-    background-color: #0F0;
-  }
-}
-@media (min-width: 767px) and (max-width: 992px) {
-  #index_title {
-    height: 60px;
-    background-color: #F00;
-  }
-}
-@media (min-width: 993px) and (max-width: 1200px) {
-    #index_title {
-    height: 60px;
-      background-color: #FFF;
-  }
-}
-@media  (min-width: 1200px) {
-  #index_title {
-    height: 60px;
-    background-color: #000;
-  }
-}
+// 
 
-
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
