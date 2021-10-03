@@ -1,7 +1,7 @@
 <template>
     <div id="SlideSHow">
         <div class="slide_left">
-            <div></div>
+            <Picture></Picture>
         </div>
         <div class="slide_right">
             <ul>
@@ -17,6 +17,7 @@
 </template>
 
 <script lang = "ts">
+import Picture from './Picture.vue'
 export default {
     props: {
 
@@ -42,7 +43,7 @@ export default {
 
     },
     components: {
-
+        Picture
     },
 };
 </script>

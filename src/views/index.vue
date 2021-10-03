@@ -45,9 +45,7 @@ export default {
 @media (min-width: 0px) {
     #index {
         display:flex;
-        max-width: 1200px;
-        margin: 70px auto;
-        padding: 0 10px;
+        width: 100% ;
         .index_left {
             height: 2000px;
             background-color: #34aadc;

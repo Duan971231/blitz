@@ -1,16 +1,11 @@
 <template>
     <div id="top">
       <div class="top_center">
-        <div class="logo">段寒松个人博客</div>
+        <div class="logo">Blitz的个人博客</div>
         <div class="list">
           <ul>
-            <li><a href="">博客首页</a></li>
-            <li><a href="">技术分享</a></li>
-            <li><a href="">程序人生</a></li>
-            <li><a href="">博客推荐</a></li>
-            <li><a href="">关于我</a></li>
-            <li><a href="">留言</a></li>
-            <li><a href="">个人博客模板</a></li>
+            <li v-for="(i, k) in lis" :key="k"
+              @click="changePath(i.router)">{{i.name}}</li>
           </ul>
         </div>
       </div>
@@ -24,7 +19,30 @@ export default {
     },
     data() {
         return {
-
+          lis: [
+            {
+              name: '博客首页',
+              router: '/'
+            }, {
+              name: '技术分享',
+              router: '/'
+            }, {
+              name: '程序人生',
+              router: '/'
+            }, {
+              name: '博客推荐',
+              router: '/'
+            }, {
+              name: '关于我',
+              router: '/aboutMe'
+            }, {
+              name: '留言',
+              router: '/'
+            }, {
+              name: '个人博客模板',
+              router: '/'
+            }
+          ]
         };
     },
     computed: {
@@ -40,7 +58,9 @@ export default {
 
     },
     methods: {
-
+      changePath(path) {
+        this.$router.push(path);
+      }
     },
     components: {
 
@@ -98,11 +118,7 @@ export default {
             list-style: none;
             color: #FFF;
             cursor: pointer;
-            a {
-              color: #FFF;
-              text-decoration: none;
-            }
-            &:hover>a {
+            &:hover {
               color: #66CDAA;
             }
             &:not(:first-child) {

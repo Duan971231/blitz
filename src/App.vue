@@ -7,16 +7,17 @@
       <router-view></router-view>
     </div>
     <div id="index_bottom">
-
+      <Footer></Footer>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Top  from './components/top.vue'
+import Top  from './components/top.vue';
+import Footer from './components/footer.vue';
 export default {
   components:{
-    Top
+    Top, Footer
   }
 }
 
@@ -35,6 +36,32 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+@media (min-width: 0px) {
+  #index_center {
+    max-width: 1200px;
+    margin: 70px auto 20px auto;
+    padding: 0 10px;
+  }
+  #index_bottom {
+    width: 100%;
+
+  }
+}
+@media (min-width: 576px) {      
+
+}
+@media (min-width: 768px) {
+        
+}
+@media  (min-width: 992px) {
+
+}
+@media (min-width: 1200) {
+  #index_center {
+    padding: 0;
+  }
+}
+
 // 
 
 </style>
