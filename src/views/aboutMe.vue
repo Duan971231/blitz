@@ -1,5 +1,6 @@
 <template>
     <div id="aboutMe">
+        <ViewTitle :titleContent = "title"></ViewTitle>
         <ul>
             <li>段寒松, 重庆人</li>
             <li>男，1997年</li>
@@ -19,13 +20,14 @@
 </template>
 
 <script lang = "ts">
+import ViewTitle from '../components/viewTitle.vue'
 export default {
     props: {
 
     },
     data() {
         return {
-
+            title: '关于我'
         };
     },
     computed: {
@@ -44,7 +46,7 @@ export default {
 
     },
     components: {
-
+        ViewTitle, 
     },
 };
 </script>

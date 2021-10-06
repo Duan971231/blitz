@@ -53,12 +53,10 @@ export default {
     @media (min-width: 0) {
         #SlideSHow {
             height: 430px;
-            background-color: pink;
             border-radius: 5px;
             .slide_left {
                 height: 260px;
                 div {
-                    background-color: red;
                     width: 100%;
                     height: 100%;
                 }
@@ -87,7 +85,6 @@ export default {
     @media(min-width: 576px) {
         #SlideSHow {
             height: 260px;
-            background-color: pink;
             border-radius: 5px;
             display: flex;
             flex-direction: row;

@@ -21,6 +21,10 @@ const routes: Array<RouteConfig> = [
     path: '/aboutMe',
     name: 'AboutMe',
     component: () => import(/* webpackChunkName: "aboutMe" */ '../views/aboutMe.vue')
+  }, {
+    path: '/share',
+    name: 'Share',
+    component: () => import(/* webpackChunkName: "share" */ '../views/shareView.vue')
   }
 ]
 

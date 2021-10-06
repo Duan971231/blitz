@@ -2,6 +2,7 @@
     <div id="index">
         <div class="index_left">
             <SlideShow></SlideShow>
+            <SharePage style="margin-top: 20px"></SharePage>
         </div>
         <div class="index_right">
             <div class="test"></div>
@@ -10,7 +11,8 @@
 </template>
 
 <script>
-import SlideShow from "../components/SlideShow.vue"
+import SlideShow from "../components/SlideShow"
+import SharePage from "../components/pages/sharePage"
 export default {
     props: {
 
@@ -36,7 +38,7 @@ export default {
 
     },
     components: {
-        SlideShow
+        SlideShow, SharePage
     },
 };
 </script>
@@ -49,7 +51,7 @@ export default {
         .index_left {
             height: 2000px;
             background-color: #34aadc;
-            flex: 1;
+            width: 100%;
         }
         .index_right {
             height: 2000px;
@@ -67,16 +69,15 @@ export default {
 }
 @media (min-width: 768px) {
 
+}
 @media  (min-width: 992px) {
     #index {
         .index_left {
             flex: 3;
         }
         .index_right {
-            padding-left: 20px;
             flex: 1;
         }
     }
-}
 }
 </style>
