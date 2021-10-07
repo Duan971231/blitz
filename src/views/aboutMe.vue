@@ -58,6 +58,8 @@ export default {
             width: 100%;
             border-radius: 5px;
             background-color: #fff;
+            padding: 20px 2.3%;
+            box-sizing: border-box;
             ul{
                 padding: 0 20px;
                 margin: 0;
@@ -90,9 +92,11 @@ export default {
         
     }
     @media (min-width: 768px) {
-        
-    }
+        }
     @media  (min-width: 992px) {
+        #aboutMe {
+            padding: 20px 1.67%;
+        }
         
     }
 </style>

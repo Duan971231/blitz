@@ -6,10 +6,14 @@
         <div class="slide_right">
             <ul>
                 <li>
-                    <div></div>
+                    <div>
+                        <img src="../slide/1.jpg" alt="">
+                    </div>
                 </li>
                 <li>
-                    <div></div>
+                    <div>
+                        <img src="../slide/3.jpg" alt="">
+                    </div>
                 </li>
             </ul>
         </div>
@@ -68,12 +72,21 @@ export default {
                     display: flex;
                     padding: 0;
                     margin: 0;
-                    height: 100%;
                     flex-direction: row;
                     li {
+                        width: 100%;
+                        height: 150px;
                         list-style: none;
                         flex: 1;
                         background-color: skyblue;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        div {
+                            img {
+                                height: 150px;
+                                width: 100%;
+                            }
+                        }
                     }
                     li+li {
                         margin-left: 10px;
@@ -88,7 +101,6 @@ export default {
             border-radius: 5px;
             display: flex;
             flex-direction: row;
-
             .slide_left {
                 flex: 7;
                 padding-right: 15px;
@@ -105,12 +117,19 @@ export default {
                     display: flex;
                     padding: 0;
                     margin: 0;
+                    width: 100%;
                     height: 100%;
                     flex-direction: column;
                     li {
+                        height: 125px;
                         list-style: none;
                         flex: 1;
                         background-color: skyblue;
+                        div {
+                            img {
+                                height: 125px;
+                            }
+                        }
                     }
                     li+li {
                         margin: 10px 0 0 0;

@@ -89,11 +89,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 @media (min-width: 0px) {
     #sharePage {
         width: 100%;
         background: #fff;
-        padding: 10px;
+        padding: 20px 2.3%;
         box-sizing: border-box;
         border-radius: 5px;
         ul {
@@ -169,12 +170,19 @@ export default {
     }
 }
 @media (min-width: 576px) {
-
+    #sharePage {
+         ul {
+             li {
+                 padding: 15px;
+             }
+         }
+    }
 }
 @media (min-width: 768px) {
     #sharePage {
          ul {
              li {
+                 padding: 20px;
                   .imgHref {
                       img {
                           height: 160px;

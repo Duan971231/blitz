@@ -39,6 +39,7 @@ export default {
         background-color: #fff;
         box-sizing: border-box;
         padding-bottom: 20px;
+        cursor: pointer;
         span {
             height: 40px;
             line-height: 40px;

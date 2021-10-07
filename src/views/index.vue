@@ -3,6 +3,7 @@
         <div class="index_left">
             <SlideShow></SlideShow>
             <SharePage style="margin-top: 20px"></SharePage>
+            <ProgramPage style="margin-top: 20px"></ProgramPage>
         </div>
         <div class="index_right">
             <div class="test"></div>
@@ -13,6 +14,7 @@
 <script>
 import SlideShow from "../components/SlideShow"
 import SharePage from "../components/pages/sharePage"
+import ProgramPage from '../components/pages/programPage'
 export default {
     props: {
 
@@ -38,7 +40,7 @@ export default {
 
     },
     components: {
-        SlideShow, SharePage
+        SlideShow, SharePage, ProgramPage
     },
 };
 </script>
@@ -49,12 +51,9 @@ export default {
         display:flex;
         width: 100% ;
         .index_left {
-            height: 2000px;
-            background-color: #34aadc;
             width: 100%;
         }
         .index_right {
-            height: 2000px;
             background-color: #5856d6;
             flex: 0;
             .test {

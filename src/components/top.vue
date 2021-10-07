@@ -28,7 +28,7 @@ export default {
               router: '/share'
             }, {
               name: '程序人生',
-              router: '/'
+              router: '/program'
             }, {
               name: '博客推荐',
               router: '/'

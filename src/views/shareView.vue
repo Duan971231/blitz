@@ -2,10 +2,17 @@
     <div id="shareView">
         <div class="share_left">
             <ViewPage></ViewPage>
+            <div class="btns">
+                <span class="btn_left">上一页</span>
+                    <span class="btn_list">1</span>
+                    <span class="btn_list">2</span>
+                <span class="btn_right">下一页</span>
+            </div>
         </div>
         <div class="share_right">
 
         </div>
+
     </div>
 </template>
 
@@ -48,11 +55,41 @@ export default {
             display:flex;
             width: 100% ;
             .share_left {
-                background-color: #34aadc;
                 width: 100%;
+                .btns {
+                    margin-top: 20px;
+                    height: 40px;
+                    .btn_left, .btn_right {
+                        display: inline-block;
+                        height: 40px;
+                        width: 85px;
+                        line-height: 40px;
+                        background-color: #F7F7F7;
+                        margin: 0 10px;
+                        color: #333;
+                        &:hover {
+                            background-color: #333;
+                            color: #f7f7f7;
+                        }
+                    }
+                    .btn_list {
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        background-color: #333;
+                        color: #F7f7f7;
+                        &:hover {
+                            
+                        }
+                    }
+                    .btn_list+.btn_list {
+                        margin-left: 10px;
+                    }
+                }
             }
             .share_right {
-                height: 2000px;
+                height: 200px;
                 background-color: #5856d6;
                 flex: 0;
             }
