@@ -60,9 +60,6 @@ export default class ShareView extends Vue {
                         line-height: 40px;
                         background-color: #333;
                         color: #F7f7f7;
-                        &:hover {
-                            
-                        }
                     }
                     .btn_list+.btn_list {
                         margin-left: 10px;
