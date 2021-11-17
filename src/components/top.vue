@@ -12,60 +12,41 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
+<script lang = "ts">
+import Vue from "vue";
+import {Component} from "vue-property-decorator";
 
-    },
-    data() {
-        return {
-          lis: [
-            {
-              name: '博客首页',
-              router: '/'
-            }, {
-              name: '技术分享',
-              router: '/share'
-            }, {
-              name: '程序人生',
-              router: '/program'
-            }, {
-              name: '博客推荐',
-              router: '/'
-            }, {
-              name: '关于我',
-              router: '/aboutMe'
-            }, {
-              name: '留言',
-              router: '/'
-            }, {
-              name: '个人博客模板',
-              router: '/'
-            }
-          ]
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-      changePath(path) {
-        this.$router.push(path);
-      }
-    },
-    components: {
-
-    },
-};
+@Component
+export default class Top extends Vue{
+  public lis:{name:string, router:string}[] = [
+    {
+      name: '博客首页',
+      router: '/'
+    }, {
+      name: '技术分享',
+      router: '/share'
+    }, {
+      name: '程序人生',
+      router: '/program'
+    }, {
+      name: '博客推荐',
+      router: '/'
+    }, {
+      name: '关于我',
+      router: '/aboutMe'
+    }, {
+      name: '留言',
+      router: '/'
+    }, {
+      name: '个人博客模板',
+      router: '/'
+    }
+  ]
+    
+  public changePath(path:string):void {
+    this.$router.push(path);
+  }
+}
 </script>
 
 <style scoped lang="scss">

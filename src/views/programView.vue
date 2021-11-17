@@ -16,34 +16,15 @@
 </template>
 
 <script lang = "ts">
+import { Component, Vue } from 'vue-property-decorator'
 import ProgramPage from '../components/pages/programPage.vue'
-export default {
-    props: {
+@Component({
+  components: {
+    ProgramPage,
+  },
+})
+export default class ProgramView extends Vue {
 
-    },
-    data() {
-        return {
-            
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-        ProgramPage
-    },
 };
 </script>
 

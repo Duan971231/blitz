@@ -5,14 +5,11 @@
         </div>
         <div class="slide_right">
             <ul>
-                <li>
+                <li v-for="(i,k) in lis" :key="k">
                     <div>
-                        <img src="../slide/1.jpg" alt="">
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <img src="../slide/3.jpg" alt="">
+                        <a :href="i.href">
+                            <img :src="i.src" :alt="i.alt" :title="i.title">
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -21,34 +18,29 @@
 </template>
 
 <script lang = "ts">
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
 import Picture from './Picture.vue'
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-        Picture
-    },
+@Component({
+  components: {
+    Picture,
+  },
+})
+export default class SlideShow extends Vue {
+    public lis:{id:number, src:string, title:string,alt: string, href:string}[] = [
+        {
+            id: 0,
+            src: require('../slide/1.jpg'),
+            title: '1.jpg',
+            alt: '图片加载失败',
+            href: ''
+        }, {
+            id: 0,
+            src: require('../slide/3.jpg'),
+            title: '3.jpg',
+            alt: '图片加载失败',
+            href: ''
+        }]
 };
 </script>
 

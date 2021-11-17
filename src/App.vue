@@ -12,15 +12,18 @@
   </div>
 </template>
 
+
 <script lang="ts">
 import Top  from './components/top.vue';
 import Footer from './components/footer.vue';
-export default {
-  components:{
-    Top, Footer
-  }
-}
+import { Component, Vue } from 'vue-property-decorator';
 
+@Component({
+  components: {
+    Top, Footer
+  },
+})
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">

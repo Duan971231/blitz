@@ -11,38 +11,21 @@
     </div>
 </template>
 
-<script>
-import SlideShow from "../components/SlideShow"
-import SharePage from "../components/pages/sharePage"
-import ProgramPage from '../components/pages/programPage'
-export default {
-    props: {
+<script lang="ts">
+import SlideShow from '@/components/SlideShow.vue'
+import SharePage from "@/components/pages/sharePage.vue"
+import ProgramPage from '@/components/pages/programPage.vue'
+import { Component, Vue } from 'vue-property-decorator'
 
-    },
-    data() {
-        return {
-
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
+@Component({
+    name: 'Index',
     components: {
         SlideShow, SharePage, ProgramPage
     },
-};
+})
+export default class Index extends Vue{
+    
+}
 </script>
 
 <style scoped lang="scss">

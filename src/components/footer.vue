@@ -10,33 +10,10 @@
 </template>
 
 <script lang = "ts">
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-
-    },
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
+@Component
+export default class Footer extends Vue {
 };
 </script>
 

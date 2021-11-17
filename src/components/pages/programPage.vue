@@ -27,93 +27,75 @@
 </template>
 
 <script lang = "ts">
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
 import ViewTitle from '../viewTitle.vue';
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-            title: '程序人生',
-            lis: [
-                {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }, {
-                    title: 'Computed和watch',
-                    src: require('../../slide/4.jpg'),
-                    content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
-                    from: '不吃茶的v李白',
-                    time: '2021-10-07',
-                    look: 521,
-                    like: 57
-                }
-            ]
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-        ViewTitle
-    },
+@Component({
+  components: {
+    ViewTitle,
+  },
+})
+export default class ProgramPage extends Vue {
+    public title:string = '程序人生';
+    public lis:{}[] = [
+        {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }, {
+            title: 'Computed和watch',
+            src: require('../../slide/4.jpg'),
+            content: 'Computed本质是一个具备缓存的watcher，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理。',
+            from: '不吃茶的v李白',
+            time: '2021-10-07',
+            look: 521,
+            like: 57
+        }]
+    
 };
 </script>
 

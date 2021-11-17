@@ -5,31 +5,15 @@
 </template>
 
 <script lang = "ts">
-export default {
-    props: ["titleContent"],
-    data() {
-        return {
+import Vue from 'vue';
+import {Prop, Component} from 'vue-property-decorator';
 
-        };
-    },
-    computed: {
+@Component
+export default class ViewTitle extends Vue {
+    @Prop({
+        default: 'title',
+    }) public titleContent!:string
 
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-
-    },
 };
 </script>
 

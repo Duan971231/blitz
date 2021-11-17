@@ -1,40 +1,44 @@
 <template>
     <div id="Picture">
-        <ul :style="{marginLeft: ul}">
-            <li v-for="(i,k) in lis" :key="k"><a href=""><img :src="i.src" alt=""></a></li>
+        <ul :style="{marginLeft: ul + '%'}">
+            <li v-for="(i,k) in lis" :key="k"><a :href="i.href"><img :src="i.src" :alt="i.alt" :title="i.title"></a></li>
         </ul>
     </div>
 </template>
 
 <script lang = "ts">
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-            ul: '-100%',
-            lis: [
-                {
-                    src: require('../slide/1.jpg'),
-                },{
-                    src: require('../slide/2.jpg'),
-                },{
-                    src: require('../slide/3.jpg'),
-                },{
-                    src: require('../slide/4.jpg'),
-                },
-            ]
-        };
-    },
-    methods: {
-        init() {
-            
-        }
-    },
-    components: {
-
-    },
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
+@Component
+export default class Picture extends Vue{
+    public  ul:number = 0;
+    public lis:{id:number, src:string, title: string, alt:string, href:string}[] = [
+        {
+            id:0,
+            src: require('../slide/1.jpg'),
+            title: '1.jpg',
+            alt: '图片加载失败',
+            href: ''
+        },{
+            id: 1,
+            src: require('../slide/2.jpg'),
+            title: '2.jpg',
+            alt: '图片加载失败',
+            href: ''
+        },{
+            id: 2,
+            src: require('../slide/3.jpg'),
+            title: '3.jpg',
+            alt: '图片加载失败',
+            href: ''
+        },{
+            id: 3,
+            src: require('../slide/4.jpg'),
+            title: '4.jpg',
+            alt: '图片加载失败',
+            href: ''
+        }];   
+    public cur_id:number = 0;
 };
 </script>
 

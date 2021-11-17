@@ -20,34 +20,18 @@
 </template>
 
 <script lang = "ts">
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
 import ViewTitle from '../components/viewTitle.vue'
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-            title: '关于我'
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
+@Component({
+    name: 'About',
     components: {
-        ViewTitle, 
+      ViewTitle,
     },
+})
+export default class AboutMe extends Vue {
+    public title:string = '关于我'
+    
 };
 </script>
 

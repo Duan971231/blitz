@@ -19,33 +19,14 @@
 <script lang = "ts">
 import ViewTitle from '../components/viewTitle.vue'
 import ViewPage from '../components/pages/sharePage.vue'
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-            title: '技术分享'
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-        ViewTitle, ViewPage
-    },
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  components: {
+    ViewTitle,ViewPage
+  },
+})
+export default class ShareView extends Vue {
+    private title:string =  '技术分享'
 };
 </script>
 

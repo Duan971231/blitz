@@ -18,73 +18,54 @@
 </template>
 
 <script lang = "ts">
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
 import ViewTitle from '../viewTitle.vue'
-export default {
-    props: {
-
-    },
-    data() {
-        return {
-            title: '技术分享',
-            lis: [
-                {
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状',
-                    content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 3
-                },{
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状',
-                    content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 3
-                },{
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状',
-                    content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 3
-                },{
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状',
-                    content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 3
-                },{
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状',
-                    content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 3
-                },{
-                    src: require('../../slide/item1.jpg'),
-                    title: 'CSS 实现蜂窝形状实现蜂窝形状实现蜂窝形状实现蜂窝形状实现蜂窝形状',
-                    content: 'CSS基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
-                    href: '',
-                    star: 311
-                }
-            ]
-        };
-    },
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
-    },
-    methods: {
-
-    },
-    components: {
-        ViewTitle
-    },
+@Component({
+  components: {
+    ViewTitle,
+  },
+})
+export default class SharePage extends Vue {
+    public title:string = '技术分享';
+    public lis:{}[] =  [
+        {
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状',
+            content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 3
+        },{
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状',
+            content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 3
+        },{
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状',
+            content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 3
+        },{
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状',
+            content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 3
+        },{
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状',
+            content: 'css基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 3
+        },{
+            src: require('../../slide/item1.jpg'),
+            title: 'CSS 实现蜂窝形状实现蜂窝形状实现蜂窝形状实现蜂窝形状实现蜂窝形状',
+            content: 'CSS基础，动画及border的真实面目。方法一：将六边形看成三个矩形的旋转拼接，六边形每一个角为60°，根据计算可以得出高宽之间的关系为根号3 ： 1。方法二：利用border属性绘制， 中间一个矩形，在利用befor和after进行两边三角形的绘制',
+            href: '',
+            star: 311
+        }]
 };
 </script>
 
