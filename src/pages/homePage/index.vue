@@ -5,50 +5,21 @@
       </div>
     </div>
     <div class="d-home-wrapper d-overflow-y">
-      <div  ref="markedRef" v-html="code"></div>
-      <div  @click="click">btn</div>
+      <div v-highlight ref="markedRef" v-html="code"></div>
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-
-}
-</script>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { marked } from 'marked'
 
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css';
+import testMd from '../../mds/test.md?raw'
+console.log(testMd)
 
-const code = ref('``` 1234 ```')
-const markedRef = ref()
+const code = ref('')
+code.value = marked(testMd)
 
-onMounted(() => {
-  const rendererMD = new marked.Renderer();
-  marked.setOptions({
-  renderer: rendererMD,
-  highlight: function(code: any) {
-    console.log(code)
-    return hljs.highlightAuto(code).value;
-  },
-  pedantic: false,
-  gfm: true,
-  breaks: false,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false,
-  xhtml: false,
-  langPrefix: "hljs language-"
-})
-code.value = marked(code.value)
-  markedRef.value.innerHTML = marked('# Canvas 基本用法\n`canvas` ``` 123 ``` 标签只有两个属性---`width` 和 `height`。当没有设置宽度和高度的时候，canvas 会初始化宽度为 300 像素和高度为 150像素。')
-})
-const click = () => {
-code.value = marked(code.value)
-}
 </script>
 <style lang="less" scoped>
   .d-home-page {

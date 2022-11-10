@@ -6,16 +6,14 @@ import rootRoutes from './router/index'
 const app = createApp(App)
 
 import hljs from 'highlight.js';
-// import 'highlight.js/styles/atom-one-dark.css' //样式
+import 'highlight.js/styles/atom-one-dark.css' //样式
 // import 'highlight.js/styles/github.css' //样式
 
  
 //创建v-highlight全局指令
 app.directive('highlight',function (el: any) {
   let blocks = el.querySelectorAll('code');
-  console.log(blocks)
   blocks.forEach((block: any)=>{
-    console.log(block)
     hljs.highlightElement(block)
   })
 })
