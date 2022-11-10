@@ -13,12 +13,15 @@ const routes: RouteRecordRaw[] = [
     path: '/home',
     name: 'home',
     component: HomePage,
+    redirect: '/index',
+    children: [
+      {
+        path: '/index',
+        name: 'home/index',
+        component: IndexPage,
+      }
+    ]
   },
-  {
-    path: '/index',
-    name: 'index',
-    component: IndexPage,
-  }
 ]
 
 const rootRoutes = createRouter({

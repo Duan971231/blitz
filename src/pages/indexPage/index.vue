@@ -6,6 +6,9 @@
 </script>
 <style lang="less" scoped>
   .d-index-page {
-    background-color: pink;
+    background-color: skyblue;
+    height: 150px;
+    width: 100%;
+    padding: 1rem;
   }
 </style>

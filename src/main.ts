@@ -6,8 +6,9 @@ import rootRoutes from './router/index'
 const app = createApp(App)
 
 import hljs from 'highlight.js';
-import 'highlight.js/styles/atom-one-dark.css' //样式
-// import 'highlight.js/styles/github.css' //样式
+// import 'highlight.js/styles/felipec.css' //样式
+import 'highlight.js/styles/tomorrow-night-bright.css' //样式
+// import 'highlight.js/styles/kimbie-dark.css' //样式
 
  
 //创建v-highlight全局指令
