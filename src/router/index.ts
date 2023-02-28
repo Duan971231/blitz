@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import HomePage from "@/pages/homePage/index.vue";
-import IndexPage from "@/pages/indexPage/index.vue";
-import AboutPage from "@/pages/aboutPage/index.vue";
 import BookPage from "@/pages/bookPage/index.vue";
 import MePage from "@/pages/mePage/index.vue";
 import AddPage from "@/pages/addPage/index.vue";
@@ -15,18 +13,18 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/home",
     name: "home",
-    component: HomePage,
+    component: () => import("@/pages/homePage/index.vue"),
     redirect: "/index",
     children: [
       {
         path: "/index",
         name: "home/index",
-        component: IndexPage,
+        component: () => import("@/pages/indexPage/index.vue"),
       },
       {
         path: "/about",
         name: "about",
-        component: AboutPage,
+        component: () => import("@/pages/aboutPage/index.vue"),
       },
       {
         path: "/book",
@@ -39,9 +37,9 @@ const routes: RouteRecordRaw[] = [
         component: MePage,
       },
       {
-        path: "/add",
-        name: "add",
-        component: AddPage,
+        path: "/tools",
+        name: "tools",
+        component: () => import("@/pages/addPage/AddPage.vue"),
       },
     ],
   },

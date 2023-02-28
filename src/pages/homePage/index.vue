@@ -79,9 +79,9 @@ const list = reactive([
     router: "/about",
   },
   {
-    label: "新增",
-    value: "add",
-    router: "/add",
+    label: "工具推荐",
+    value: "tools",
+    router: "/tools",
   },
   {
     label: "大事记",
@@ -124,7 +124,7 @@ const changRouter = (route: string) => {
 
 /** 跳转 github  */
 const toGithub = () => {
-  window.open("https://gitee.com/duanhansong122/vite-vue");
+  window.open("https://github.com/Duan971231/blitz");
 };
 </script>
 <style lang="less" scoped>
