@@ -1,0 +1,30 @@
+{
+  "id": "3763127",
+  "name": "vite",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4936678",
+      "name": "phone-fill",
+      "font_class": "phone-fill",
+      "unicode": "e86d",
+      "unicode_decimal": 59501
+    },
+    {
+      "icon_id": "4936984",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "5354204",
+      "name": "邮箱",
+      "font_class": "youxiang-",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    }
+  ]
+}
