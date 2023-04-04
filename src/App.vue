@@ -1,10 +1,11 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router';
-</script>
-
 <template>
   <RouterView />
 </template>
+
+<script setup lang="ts">
+import { RouterView } from 'vue-router';
+const add = 0;
+</script>
 
 <style lang="less">
 .d-overflow-y {

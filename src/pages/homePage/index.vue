@@ -42,78 +42,78 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, reactive } from "vue";
-import { marked } from "marked";
-import { RouterView } from "vue-router";
-import HeaderButton from "@/components/HeaderButton/index.vue";
-import testMd from "../../mds/test.md?raw";
-import { useRouter } from "vue-router";
+import { ref, onMounted, reactive } from 'vue';
+import { marked } from 'marked';
+import { RouterView } from 'vue-router';
+import HeaderButton from '@/components/HeaderButton/index.vue';
+import testMd from '../../mds/test.md?raw';
+import { useRouter } from 'vue-router';
 
-const code = ref("");
+const code = ref('');
 const homePageRef = ref();
 code.value = marked(testMd);
 
 const router = useRouter();
 
-const showType = ref("big"); // small or big
+const showType = ref('big'); // small or big
 /** 判定屏幕是大屏还是小屏 */
 const setType = () => {
   const { width } = homePageRef.value.getBoundingClientRect();
   if (width >= 1200) {
-    showType.value = "big";
+    showType.value = 'big';
   } else {
-    showType.value = "small";
+    showType.value = 'small';
   }
 };
 
 /**顶部导航栏列表 */
 const list = reactive([
   {
-    label: "首页",
-    value: "index",
-    router: "/index",
+    label: '首页',
+    value: 'index',
+    router: '/index',
   },
   {
-    label: "关于本站",
-    value: "about",
-    router: "/about",
+    label: '关于本站',
+    value: 'about',
+    router: '/about',
   },
   {
-    label: "工具推荐",
-    value: "tools",
-    router: "/tools",
+    label: '工具推荐',
+    value: 'tools',
+    router: '/tools',
   },
   {
-    label: "大事记",
-    value: "book",
-    router: "/book",
+    label: '大事记',
+    value: 'book',
+    router: '/book',
   },
   {
-    label: "我的",
-    value: "me",
-    router: "/me",
+    label: '我的',
+    value: 'me',
+    router: '/me',
   },
 ]);
 
 /** 底部联系方式列表 */
 const bottomList = reactive([
   {
-    icon: "icon-phone-fill",
-    lable: "18512326932",
+    icon: 'icon-phone-fill',
+    lable: '18512326932',
   },
   {
-    icon: "icon-youxiang-",
-    lable: "1530904047@qq.com",
+    icon: 'icon-youxiang-',
+    lable: '1530904047@qq.com',
   },
   {
-    icon: "icon-QQ",
-    lable: "1530904047",
+    icon: 'icon-QQ',
+    lable: '1530904047',
   },
 ]);
 
 onMounted(() => {
   setType();
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     setType();
   });
 });
@@ -124,7 +124,7 @@ const changRouter = (route: string) => {
 
 /** 跳转 github  */
 const toGithub = () => {
-  window.open("https://github.com/Duan971231/blitz");
+  window.open('https://github.com/Duan971231/blitz');
 };
 </script>
 <style lang="less" scoped>

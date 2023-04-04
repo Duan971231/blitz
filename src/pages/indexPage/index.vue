@@ -17,7 +17,7 @@
           <div class="d-item-title">{{ item.title }}{{ item.title }}</div>
           <div class="d-item-bottom">
             <div class="d-item-time">
-              {{ dayjs(item.time).format("YYYY-MM-DD") }}
+              {{ dayjs(item.time).format('YYYY-MM-DD') }}
             </div>
             <div class="d-item-see">
               <div class="d-star">
@@ -41,9 +41,9 @@
 </template>
 
 <script setup lang="ts">
-import dayjs from "dayjs";
-import { HomeService } from "@/assets/api/api";
-import { onMounted, reactive } from "vue";
+import dayjs from 'dayjs';
+import { HomeService } from '@/assets/api/api';
+import { onMounted, reactive } from 'vue';
 
 const list: any = reactive([]);
 
@@ -95,7 +95,7 @@ onMounted(async () => {
       color: rgba(255, 255, 255, 0.7);
       &::before {
         display: inline-block;
-        content: "";
+        content: '';
         width: 5px;
         height: 30px;
         background-color: rgba(202, 205, 208, 0.7);

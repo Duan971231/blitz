@@ -2,15 +2,15 @@
 
 # Canvas 基本用法
 
-`canvas` 标签只有两个属性---`width` 和 `height`。当没有设置宽度和高度的时候，canvas 会初始化宽度为 300 像素和高度为 150像素。
+`canvas` 标签只有两个属性---`width` 和 `height`。当没有设置宽度和高度的时候，canvas 会初始化宽度为 300 像素和高度为 150 像素。
 
 <h3>渲染上下文(The rendering context)</h4>
 
 canvas 元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容。
 
 ```js
-let canvas = document.getElementById('id')
-let ctx = canvas.getContext('2d')
+let canvas = document.getElementById('id');
+let ctx = canvas.getContext('2d');
 ```
 
 <h3>检查支持性</h3>
@@ -18,12 +18,12 @@ let ctx = canvas.getContext('2d')
 替换内容是用于在不支持 `canvas` 标签的浏览器中展示的。
 
 ```js
-let canvas = document.getElementById('id')
+let canvas = document.getElementById('id');
 if (canvas.getContext) {
-    let ctx = canvas.getContext('2d')
-    // drawing code here
+  let ctx = canvas.getContext('2d');
+  // drawing code here
 } else {
-    // canvas unsupported code here
+  // canvas unsupported code here
 }
 ```
 
@@ -33,13 +33,13 @@ if (canvas.getContext) {
 
 ```js
 // 绘制一个填充矩形
-ctx.fillRect(x, y, width, height)
+ctx.fillRect(x, y, width, height);
 
 // 绘制一个矩形的边框
-ctx.strokeRect(x, y, width, height)
+ctx.strokeRect(x, y, width, height);
 
 // 清除指定矩形区域，让清除部分完全透明
-ctx.clearRect(x, y, width, height)
+ctx.clearRect(x, y, width, height);
 ```
 
 <h3>绘制路径</h3>
@@ -53,16 +53,16 @@ ctx.clearRect(x, y, width, height)
 
 ```js
 // 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径
-ctx.beginPath()
+ctx.beginPath();
 
 // 闭合路径之后，图形绘制命令重新指向到上下文中
-ctx.closePath()
+ctx.closePath();
 
 // 通过线条来绘制图形轮廓
-ctx.stroke()
+ctx.stroke();
 
 // 填充路径，生成实心图形
-ctx.fill()
+ctx.fill();
 ```
 
 ==当前路径为空，即调用 `beginPath()` 之后，或者 canvas 刚建的时候，第一条路径构造命令通常被视为是 `moveTo()` 无论实际是什么。==
@@ -72,11 +72,11 @@ ctx.fill()
 <h3>绘制三角形</h3>
 
 ```js
-ctx.beginPath()
-ctx.moveTo(75, 50)
-ctx.lineTo(100, 75)
-ctx.lineTo(100, 25)
-ctx.fill()
+ctx.beginPath();
+ctx.moveTo(75, 50);
+ctx.lineTo(100, 75);
+ctx.lineTo(100, 25);
+ctx.fill();
 ```
 
 <h3>移动笔触moveTo</h3>
@@ -91,29 +91,29 @@ ctx.fill()
 
 ==arc()函数中表示角的单位是弧度，不是角度，角度与弧度的 js 表达式：==
 
-==弧度 = ( Math.PI / 180 ) * 角度==
+==弧度 = ( Math.PI / 180 ) \* 角度==
 
 <h3>二次贝塞尔曲线及三次贝塞尔曲线</h3>
 
 ```js
 // 绘制二次贝塞尔曲线，cplx, cply为一个控制点，x, y结束点
-quadraticCurveTo(cp1x, cp1y, x, y)
+quadraticCurveTo(cp1x, cp1y, x, y);
 
 // 绘制三次贝塞尔曲线，cplx, cply 为控制点一，cp2x, cp2y为控制点二，x, y为结束点
-bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
 ```
 
 ```js
 // 三次贝塞尔曲线画爱心
-ctx.beginPath()
-ctx.moveTo(75, 40)
-ctx.bezierCurveTo(75, 37, 70, 25, 50, 25)
-ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5)
-ctx.bezierCurveTo(20, 80, 40, 102, 75, 120)
-ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5)
-ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25)
-ctx.bezierCurveTo(85, 25, 75, 37, 75, 40)
-ctx.stroke()
+ctx.beginPath();
+ctx.moveTo(75, 40);
+ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+ctx.stroke();
 ```
 
 ## 使用样式和颜色
@@ -122,66 +122,66 @@ ctx.stroke()
 
 ```js
 // 设置图形的填充颜色
-ctx.fillStyle = color
+ctx.fillStyle = color;
 
 // 设置图形轮廓的颜色
-ctx.strokeStyle = color
+ctx.strokeStyle = color;
 
 // 这些 fillStyle 的值均为 '橙色'
-ctx.fillStyle = "orange";
-ctx.fillStyle = "#FFA500";
-ctx.fillStyle = "rgb(255,165,0)";
-ctx.fillStyle = "rgba(255,165,0,1)";
+ctx.fillStyle = 'orange';
+ctx.fillStyle = '#FFA500';
+ctx.fillStyle = 'rgb(255,165,0)';
+ctx.fillStyle = 'rgba(255,165,0,1)';
 ```
 
 <h3>透明度 Transparency</h3>
 
 ```js
 // 透明度，影响 canvas 里所有图形的透明度
-ctx.globalAlpha = transparencyValue
+ctx.globalAlpha = transparencyValue;
 ```
 
 <h3>线型 Line Styles</h3>
 
 ```js
 // 线条宽度
-ctx.lineWidth = value
+ctx.lineWidth = value;
 
-// 设置线条末端样式, butt, round, square,默认 butt  
-ctx.lineCap = type
+// 设置线条末端样式, butt, round, square,默认 butt
+ctx.lineCap = type;
 
 // 设定线条与线条间接合处的样式
-ctx.lineJoin = type
+ctx.lineJoin = type;
 
 // 限制当两条线相交时交接处最大宽度
-ctx.miterLimit = value
+ctx.miterLimit = value;
 
 // 返回一个包含当前虚线样式，长度为非负偶数的数组
-ctx.getLineDash()
+ctx.getLineDash();
 
 // 设置当前虚线样式
-ctx.setLineSash(segments)
+ctx.setLineSash(segments);
 
 // 设置虚线样式的起始偏移量
-ctx.lineDashOffset = value
+ctx.lineDashOffset = value;
 ```
 
 <h3>渐变 Gradientss</h3>
 
 ```js
 // 渐变的起点 (x1, y1), 终点 (x2, y2)
-ctx.createLinearGradient(x1, y1, x2, y2)
+ctx.createLinearGradient(x1, y1, x2, y2);
 
 // 渐变的原点 (x1, y1), 半径 r1, 另一个圆原点 (x2, y2) 半径 r2
-ctx.createRadialGradient(x1, y1, r1, x2, y2, r2)
+ctx.createRadialGradient(x1, y1, r1, x2, y2, r2);
 
 // position 是0.0-1.0。表示渐变中颜色所在的相对位置。
 // color 是一个有效的 CSS 颜色值
-gradient.addColorStop(position, color)
+gradient.addColorStop(position, color);
 
-var lineargradient = ctx.createLinearGradient(0,0,150,150);
-lineargradient.addColorStop(0,'white');
-lineargradient.addColorStop(1,'black');
+var lineargradient = ctx.createLinearGradient(0, 0, 150, 150);
+lineargradient.addColorStop(0, 'white');
+lineargradient.addColorStop(1, 'black');
 ```
 
 <h3>图案样式 Ptterns</h3>
@@ -201,35 +201,36 @@ leet ptrn = ctx.createPattern(img, 'repeat')
 <h3>阴影 Shadows</h3>
 
 ```js
-ctx.shadowOffsetX = float
-ctx.shadowOffsetY = float
+ctx.shadowOffsetX = float;
+ctx.shadowOffsetY = float;
 
 // 设定阴影的模糊程度
-ctx.shadowBlur = float
+ctx.shadowBlur = float;
 
 // 阴影颜色
-ctx.shadowColor = color
+ctx.shadowColor = color;
 ```
 
 ## 绘制文本
-canvas 提供了两种方法绘制文本
-```js
-ctx.fillText(text, x, y, [, maxWidth])
 
-ctx.strokeText(text, x, y, [, maxWidth])
+canvas 提供了两种方法绘制文本
+
+```js
+ctx.fillText(text, x, y, [, maxWidth]);
+
+ctx.strokeText(text, x, y, [, maxWidth]);
 ```
 
 <h3>有样式的文本</h3>
 
-
 ```js
-ctx.font = '10px sans-serif' // 文本样式 和 CSS font 语法相同
+ctx.font = '10px sans-serif'; // 文本样式 和 CSS font 语法相同
 
-ctx.textAlign = 'start' // 文本对齐选项 start, end, left, right, center
+ctx.textAlign = 'start'; // 文本对齐选项 start, end, left, right, center
 
-ctx.textBaseline = 'alphabetic' // 基线对齐选项 top hanging middle alphabetic ideographic bottom
+ctx.textBaseline = 'alphabetic'; // 基线对齐选项 top hanging middle alphabetic ideographic bottom
 
-ctx.direction = 'inherit' // 文本方向 ltr, rtl, inherit
+ctx.direction = 'inherit'; // 文本方向 ltr, rtl, inherit
 ```
 
 <h3>预测量文本宽度</h3>
@@ -237,7 +238,7 @@ ctx.direction = 'inherit' // 文本方向 ltr, rtl, inherit
 `ctx.measureText()`: 返回一个 `TextMetrics` 对象的宽度、所在像素
 
 ```js
-let text = ctxx.measureText("foo")
+let text = ctxx.measureText('foo');
 text.width; // 16
 ```
 
@@ -245,7 +246,7 @@ text.width; // 16
 
 引入图像到 canvas 里需要以下两步基本操作：
 
-1. 获得一个指向 `HTMLImageElement` 的对象或者另一个 canvas 元素的引用作为源，也可以通过提供一个URL的方式来使用图片
+1. 获得一个指向 `HTMLImageElement` 的对象或者另一个 canvas 元素的引用作为源，也可以通过提供一个 URL 的方式来使用图片
 2. 使用 `drawImage()` 函数将函数绘制到画布上
 
 <h3>获得需要绘制的图片</h3>
@@ -254,7 +255,7 @@ canvas 的 API 可以使用下面这些类型中的一种作为图片的源。
 
 `HTMLImageElement` 这些图片是由 `Image()` 函数构造出来的，或者任何的 `<img>` 元素。
 
-`HTMLVideoElement`: 用一个HTML的 `<video>` 元素作为你的图片源，可以从视频中抓取当前帧作为一个图像。
+`HTMLVideoElement`: 用一个 HTML 的 `<video>` 元素作为你的图片源，可以从视频中抓取当前帧作为一个图像。
 
 `HTMLCanvasElement`: 可以使用另一个 `<canvas>` 元素作为你的图片源。
 
@@ -268,9 +269,9 @@ canvas 的 API 可以使用下面这些类型中的一种作为图片的源。
 
 我们可以通过下列方式的一种来获得与 canvas 相同页面内的图片的引用。
 
-+ `document.images`集合
-+ `document.getElementByTagName()` 方法
-+ `document.getElementById()`
+- `document.images`集合
+- `document.getElementByTagName()` 方法
+- `document.getElementById()`
 
 <h3>使用其他域名下的图片</h3>
 
@@ -285,12 +286,12 @@ canvas 的 API 可以使用下面这些类型中的一种作为图片的源。
 <h3>由 0 开始创建图像</h3>
 
 ```js
-let img = new Image()
+let img = new Image();
 
 img.onload = () => {
-    // 执行 drawImage 语句
-}
-img.src = 'myImage.png'
+  // 执行 drawImage 语句
+};
+img.src = 'myImage.png';
 ```
 
 <h2>绘制图片</h2>
@@ -330,9 +331,9 @@ ctx.imageSmoothingEnabled = false;
 
 一个绘画状态包括：
 
-+ 当前应用的变形（即移动，旋转和缩放）
-+ 以及下面这些属性：`strokeStyle`, `fillStyle`, `globalAlpha`, `lineWidth`, `lineCap`,`miterLimit`, `lineDashOffset`, `shadowOffsetX`, `shadowOffsetY`, `shadowBlur`, `shadowColor`, `globalCompositeOperation`, `font`, `textAlign`, `texttBaseline`, `direction`, `imageSmoothingEnabled`.
-+ 当前的`裁切路径(clipping path)
+- 当前应用的变形（即移动，旋转和缩放）
+- 以及下面这些属性：`strokeStyle`, `fillStyle`, `globalAlpha`, `lineWidth`, `lineCap`,`miterLimit`, `lineDashOffset`, `shadowOffsetX`, `shadowOffsetY`, `shadowBlur`, `shadowColor`, `globalCompositeOperation`, `font`, `textAlign`, `texttBaseline`, `direction`, `imageSmoothingEnabled`.
+- 当前的`裁切路径(clipping path)
 
 <h3>移动 Translating</h3>
 
@@ -356,12 +357,12 @@ ctx.imageSmoothingEnabled = false;
 
 `transform(a, b, c, d, e, f)`: 这个方法是将当前的变形矩阵乘上一个基于自身参数的矩阵
 
-+ a: 水平方向的缩放
-+ b: 垂直方向的倾斜偏移
-+ c: 水平方向的倾斜偏移
-+ d: 垂直方向的缩放
-+ e: 水平方向的移动
-+ f: 垂直方向的移动
+- a: 水平方向的缩放
+- b: 垂直方向的倾斜偏移
+- c: 水平方向的倾斜偏移
+- d: 垂直方向的缩放
+- e: 水平方向的移动
+- f: 垂直方向的移动
 
 `setTransform(a, b, c, d, e, f)`: 这个方法会将当前的变形重置为单位矩阵，然后用相同的参数调用 `transform`方法
 
@@ -369,7 +370,7 @@ ctx.imageSmoothingEnabled = false;
 
 ## 组合 Compositing
 
-`globalCompositeOperation`: 
+`globalCompositeOperation`:
 
 不仅可以在已有图形后面再画新图形，还可以用来遮盖指定区域，清除画布中的某些部分（清除区域不仅限于矩形）以及更多其他操作
 
@@ -377,63 +378,5 @@ ctx.imageSmoothingEnabled = false;
 
 Compositing 实例:="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Compositing/Example"
 
-+ source-over: 默认设置，在现有画布上下文之上绘制新图形
-+ source-in: 新图形只在新图形和目标画布重叠的地方绘制，其他都是透明的。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- source-over: 默认设置，在现有画布上下文之上绘制新图形
+- source-in: 新图形只在新图形和目标画布重叠的地方绘制，其他都是透明的。

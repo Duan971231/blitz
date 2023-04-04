@@ -2,11 +2,7 @@
   <div class="d-add-page">
     <div>标题</div>
     <div>
-      <input
-        v-model="titleValue"
-        type="text"
-        style="width: 100%; height: 32px"
-      />
+      <input v-model="titleValue" type="text" style="width: 100%; height: 32px" />
     </div>
     <div>图片</div>
     <div>
@@ -27,20 +23,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { HomeService } from "@/assets/api/api";
-import { dataList } from "./arr.js";
+import { ref, onMounted } from 'vue';
+import { HomeService } from '@/assets/api/api';
+import { dataList } from './arr.js';
 
 onMounted(async () => {});
 
-const titleValue = ref("");
+const titleValue = ref('');
 /** 图片 */
-const base64: any = ref("");
+const base64: any = ref('');
 const addImg = () => {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = "image/png, image/jpeg";
-  input.addEventListener("change", (source: any) => changeImgUrl(source));
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png, image/jpeg';
+  input.addEventListener('change', (source: any) => changeImgUrl(source));
   input.click();
 };
 const changeImgUrl = (source: any) => {
@@ -48,7 +44,7 @@ const changeImgUrl = (source: any) => {
     let input = source;
     let reader = new FileReader();
     reader.readAsDataURL(input.target.files[0]);
-    reader.addEventListener("load", () => {
+    reader.addEventListener('load', () => {
       if (reader.result) {
         base64.value = reader.result;
       }
@@ -57,12 +53,12 @@ const changeImgUrl = (source: any) => {
 };
 
 /** md 文件 */
-const mdValue: any = ref("");
+const mdValue: any = ref('');
 const addText = () => {
-  const input = document.createElement("input");
-  input.type = "file";
+  const input = document.createElement('input');
+  input.type = 'file';
   //   input.accept = "image/png, image/jpeg";
-  input.addEventListener("change", (source: any) => changeText(source));
+  input.addEventListener('change', (source: any) => changeText(source));
   input.click();
 };
 const changeText = (source: any) => {
@@ -70,7 +66,7 @@ const changeText = (source: any) => {
     let input = source;
     let reader = new FileReader();
     reader.readAsText(input.target.files[0]);
-    reader.addEventListener("load", () => {
+    reader.addEventListener('load', () => {
       if (reader.result) {
         mdValue.value = reader.result;
       }

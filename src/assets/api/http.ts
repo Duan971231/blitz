@@ -1,11 +1,6 @@
-import axios, {
-  AxiosError,
-  AxiosRequestConfig,
-  AxiosRequestHeaders,
-  AxiosResponse,
-} from "axios";
+import axios, { AxiosError, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios';
 
-import { CommonResponse, HTTPMethod, RspStatusCode } from "./type";
+import { CommonResponse, HTTPMethod, RspStatusCode } from './type';
 
 class HTTP {
   static singletonHttpInstance: HTTP | null = null;
@@ -15,7 +10,7 @@ class HTTP {
   private defaultTimeout: number = 300000;
 
   private defaultHeader: any = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   };
 
   constructor() {
@@ -32,7 +27,7 @@ class HTTP {
       },
       (error) => {
         return Promise.reject(error);
-      }
+      },
     );
 
     /** 响应拦截器  */
@@ -45,7 +40,7 @@ class HTTP {
       },
       (error: AxiosError) => {
         return Promise.reject(error);
-      }
+      },
     );
 
     HTTP.singletonHttpInstance = this;
@@ -65,16 +60,14 @@ class HTTP {
     url: string,
     method: HTTPMethod,
     data?: { [key: string]: unknown },
-    option?: AxiosRequestConfig
+    option?: AxiosRequestConfig,
   ): Promise<null | CommonResponse<T>> {
     const sendUrl = `${this.baseURL}${url}`;
 
     const currentTimeout: number = this.defaultTimeout;
     const currentHeader: AxiosRequestHeaders = this.defaultHeader;
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    let responsePromise: Promise<null | CommonResponse<T>> = new Promise(
-      () => {}
-    );
+    let responsePromise: Promise<null | CommonResponse<T>> = new Promise(() => {});
 
     const config = {
       headers: {
@@ -111,7 +104,7 @@ class HTTP {
             return response.data;
           })
           .catch((error: any) => {
-            console.log("POST =======", error);
+            console.log('POST =======', error);
             // message.error(JSON.stringify(error.message || error.msg || error));
             console.log(JSON.stringify(error.message || error.msg || error));
             return null;

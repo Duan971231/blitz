@@ -1,13 +1,13 @@
 export enum HTTPMethod {
-  GET = "GET",
-  PUT = "PUT",
-  POST = "POST",
-  DELETE = "DELETE",
+  GET = 'GET',
+  PUT = 'PUT',
+  POST = 'POST',
+  DELETE = 'DELETE',
 }
 
 export enum Env {
-  DEV = "DEV",
-  PRD = "PRD",
+  DEV = 'DEV',
+  PRD = 'PRD',
 }
 
 export enum RspStatusCode {
