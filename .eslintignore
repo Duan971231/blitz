@@ -1,0 +1,8 @@
+!.prettierrc.js
+.eslintrc.js
+project-options.js
+/node_modules
+/build
+/dist
+/config
+/vite.config.ts

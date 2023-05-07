@@ -1,23 +1,35 @@
 {
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
+    "target": "ES6",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
+    "types": ["vite/client"],
+    "lib": ["ES2016", "DOM", "DOM.Iterable"],
+    "allowJs": true,
     "jsx": "preserve",
-    "resolveJsonModule": true,
     "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "noEmit": true,
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
       "Config/*": ["config/*"]
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+
+  "references": [
+    {
+      "path": "./tsconfig.vite-config.json"
+    }
+  ],
+  "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
-import { CommonResponse, HTTPMethod } from './type';
 import HTTP from './http';
+import { CommonResponse, HTTPMethod } from './type';
 
 export const HomeService = {
   getAllMd(): Promise<null | CommonResponse<any | null>> {

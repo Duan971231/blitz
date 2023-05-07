@@ -7,7 +7,7 @@ class HTTP {
 
   private baseURL: string = import.meta.env.VITE_BASE_HOST;
 
-  private defaultTimeout: number = 300000;
+  private defaultTimeout = 300_000;
 
   private defaultHeader: any = {
     'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ class HTTP {
     };
 
     switch (method) {
-      case HTTPMethod.GET:
+      case HTTPMethod.GET: {
         responsePromise = axios
           .get<CommonResponse<T>>(sendUrl, {
             ...config,
@@ -93,8 +93,9 @@ class HTTP {
             return error;
           });
         break;
+      }
       case HTTPMethod.PUT:
-      case HTTPMethod.POST:
+      case HTTPMethod.POST: {
         responsePromise = axios
           .post<CommonResponse<T>>(sendUrl, data, {
             headers: currentHeader,
@@ -110,8 +111,10 @@ class HTTP {
             return null;
           });
         break;
-      default:
+      }
+      default: {
         break;
+      }
     }
     return responsePromise;
   }

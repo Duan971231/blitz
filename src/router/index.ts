@@ -1,45 +1,30 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
-import HomePage from "@/pages/homePage/index.vue";
-import BookPage from "@/pages/bookPage/index.vue";
-import MePage from "@/pages/mePage/index.vue";
-import AddPage from "@/pages/addPage/index.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "/",
-    redirect: "/home",
+    path: '/',
+    redirect: '/home',
   },
   {
-    path: "/home",
-    name: "home",
-    component: () => import("@/pages/homePage/index.vue"),
-    redirect: "/index",
+    path: '/home',
+    name: 'home',
+    component: () => import('@/pages/layouts/BaseLayout.vue'),
+  },
+  {
+    path: '/map',
+    name: 'map',
+    redirect: '/map/mapbox',
+    component: () => import('@/pages/map/layout/MapLayout.vue'),
     children: [
       {
-        path: "/index",
-        name: "home/index",
-        component: () => import("@/pages/indexPage/index.vue"),
+        path: 'mapbox',
+        name: 'mapbox',
+        component: () => import('@/pages/map/map-home/MapHome.vue'),
       },
       {
-        path: "/about",
-        name: "about",
-        component: () => import("@/pages/aboutPage/index.vue"),
-      },
-      {
-        path: "/book",
-        name: "book",
-        component: BookPage,
-      },
-      {
-        path: "/me",
-        name: "me",
-        component: MePage,
-      },
-      {
-        path: "/tools",
-        name: "tools",
-        component: () => import("@/pages/addPage/AddPage.vue"),
+        path: 'cesium',
+        name: 'cesium',
+        component: () => import('@/pages/map/map-home/MapHome.vue'),
       },
     ],
   },

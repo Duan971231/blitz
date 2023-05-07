@@ -1,0 +1,109 @@
+.base-layout {
+  .layout-header {
+      height: 64px;
+      line-height: 64px;
+      padding: 0 16px;
+      display: flex;
+      color: #fff;
+      background-color: @primary-color;
+      &>* {
+          height: 100%;
+      }
+
+      .header-content {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .menu {
+              background: transparent;
+              border: none;
+              height: 36px;
+              :deep(.ant-menu-overflow-item) {
+                  height: 100%;
+                  line-height: 36px;
+                  border-radius: 18px;
+              }
+              :deep(.ant-menu-title-content) {
+                  color: #ffffff;
+              }
+              :deep(.ant-menu-item-selected) {
+                  background: #ffffff;
+                  &::after {
+                      content: none;
+                      border-bottom: none;
+                  }
+                  .ant-menu-title-content {
+                      color: @primary-color;
+                  }
+              }
+              :deep(.ant-menu-submenu-selected) {
+                  background: #ffffff;
+                  &::after {
+                      content: none;
+                      border-bottom: none;
+                  }
+                  .ant-menu-title-content {
+                      color: @primary-color;
+                  }
+              }
+          }
+      }
+  }      
+  .ant-layout {
+    height: calc(100vh - 64px);
+    .ant-layout-content {
+      height: 100%;
+    }
+  }
+
+  .layout-header-logo {
+      display: flex;
+      align-items: center;
+
+      h1 {
+          font-size: 18px;
+          line-height: normal;
+          color: #fff;
+          margin: 0 0 0 12px;
+      }
+      span {
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+        font-size: 30px;
+        display: inline-block;
+        &:hover {
+          color: #ddd;
+        }
+      }
+  }
+
+  .layout-header-action {
+      height: 64px;
+      padding: 0 12px;
+      cursor: pointer;
+
+      .anticon {
+          font-size: 18px;
+      }
+
+      // &:hover {
+      //     background: #375bec;
+      // }
+  }
+  .layout-router-view {
+      background-color: #E8E8E8;
+      overflow: hidden;
+      box-sizing: border-box;
+      height: calc(100% - 40px);
+      display: flex;
+      .layout-wrapper{
+          background-color: #fff;
+          height: 100%;
+          flex: 1;
+          overflow-x: hidden;
+          overflow-y: auto;
+      }
+  }
+}

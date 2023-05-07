@@ -3,9 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouterView } from "vue-router";
-
-const add = 0;
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="less">
