@@ -9,7 +9,7 @@
     autofocus
     :class="{ 'eco-number-empty': emptyState }"
     class="eco-number-input"
-    :bordered="noBorder"
+    :bordered="!noBorder"
     :style="noBorder ? 'border: none; outline: none; box-shadow: none' : ''"
   />
 </template>

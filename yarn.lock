@@ -3528,7 +3528,7 @@ hosted-git-info@^2.1.4:
 
 html-docx-js-typescript@^0.1.5:
   version "0.1.5"
-  resolved "https://registry.npmmirror.com/html-docx-js-typescript/-/html-docx-js-typescript-0.1.5.tgz#2f0119dd9423990de71ab5390ba829be79a2a92a"
+  resolved "https://registry.npmjs.org/html-docx-js-typescript/-/html-docx-js-typescript-0.1.5.tgz#2f0119dd9423990de71ab5390ba829be79a2a92a"
   integrity sha512-GNojWFDYbpHSIgKml6/0oAom8mtHrHRTWKMyLRdeJQHO/CyeM6H39DYgzYvPp4OhBp2Ti8dxMKFq0/FkpYD4bg==
   dependencies:
     browser-or-node "^1.2.1"
